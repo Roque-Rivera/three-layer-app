@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Application Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/three-layer-app
+Environment="PATH=/home/ubuntu/three-layer-app/venv/bin"
+ExecStart=/home/ubuntu/three-layer-app/venv/bin/python app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target 
