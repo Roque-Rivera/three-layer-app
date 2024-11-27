@@ -65,12 +65,17 @@
             itemsList.innerHTML = "";
             items.forEach((item) => {
               itemsList.innerHTML += `
-                            <div class="item">
-                                <h3>${item.name}</h3>
-                                <p>${item.description}</p>
-                            </div>
-                        `;
+                <div class="item">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                </div>
+              `;
             });
+          })
+          .catch((error) => {
+            console.error("Error loading items:", error);
+            document.getElementById("itemsList").innerHTML =
+              "<p>Error loading items. Please try again later.</p>";
           });
       }
 
@@ -90,6 +95,10 @@
             loadItems();
             document.getElementById("itemName").value = "";
             document.getElementById("itemDescription").value = "";
+          })
+          .catch((error) => {
+            console.error("Error adding item:", error);
+            alert("Error adding item. Please try again.");
           });
       }
 
