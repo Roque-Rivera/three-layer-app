@@ -54,8 +54,7 @@
     <div id="itemsList"></div>
 
     <script>
-      const API_ENDPOINT =
-        "http://your-nlb-endpoint.region.elb.amazonaws.com:5000";
+      const API_ENDPOINT = "/api";
 
       function loadItems() {
         fetch(`${API_ENDPOINT}/api/items`)
